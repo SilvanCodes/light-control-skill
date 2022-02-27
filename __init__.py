@@ -21,17 +21,17 @@ class LightControl(MycroftSkill):
         MycroftSkill.__init__(self)
 
     @intent_handler('control.light.on.intent')
-    def handle_control_light(self, message):
+    def handle_light_on(self, message):
         toggle_power()
         self.speak_dialog('control.light.on')
 
     @intent_handler('control.light.off.intent')
-    def handle_control_light(self, message):
+    def handle_light_off(self, message):
         toggle_power()
         self.speak_dialog('control.light.off')
 
     @intent_handler('control.light.color.intent')
-    def handle_control_light(self, message):
+    def handle_light_color(self, message):
         toggle_color()
         self.speak_dialog('control.light.color')
 
