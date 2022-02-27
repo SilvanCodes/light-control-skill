@@ -1,4 +1,4 @@
-from mycroft import MycroftSkill, intent_file_handler
+from mycroft import MycroftSkill, intent_handler
 import urllib.request
 
 ESP_HOST = 'http://esp32.local'
@@ -20,17 +20,17 @@ class LightControl(MycroftSkill):
     def __init__(self):
         MycroftSkill.__init__(self)
 
-    @intent_file_handler('control.light.on.intent')
+    @intent_handler('control.light.on.intent')
     def handle_control_light(self, message):
         toggle_power()
         self.speak_dialog('control.light.on')
 
-    @intent_file_handler('control.light.off.intent')
+    @intent_handler('control.light.off.intent')
     def handle_control_light(self, message):
         toggle_power()
         self.speak_dialog('control.light.off')
 
-    @intent_file_handler('control.light.color.intent')
+    @intent_handler('control.light.color.intent')
     def handle_control_light(self, message):
         toggle_color()
         self.speak_dialog('control.light.color')
